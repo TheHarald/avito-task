@@ -1,0 +1,47 @@
+.comment__container{
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comment__author{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--black-color);
+}
+
+.comment__text{
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--gray-color);
+    max-width: 600px;
+}
+
+.comment__score{
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--black-color);
+}
+
+.comment__date{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-color);
+}
+
+.comment_root-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1000px;
+}
+
+.comment__childs{
+    padding-left: 20px;
+}
+
+.hidden{
+    display: none;
+}

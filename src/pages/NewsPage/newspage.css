@@ -1,0 +1,14 @@
+.news-page__container{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    margin: 40px;
+}
+
+.news-page__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1000px;
+}

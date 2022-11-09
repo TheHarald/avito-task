@@ -1,0 +1,23 @@
+.icon__container{
+    width: 24px;
+    height: 24px;
+    transition: 0.5s;
+}
+
+
+.icon__container:hover{
+    background-color: var(--light-gray-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.up{
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+
+.down{
+    transform: rotate(0deg);
+    transition: 0.5s;
+}

@@ -1,0 +1,5 @@
+.skeleton__container{
+    background-color: var(--light-gray-color);
+    height: 80px;
+    border-radius: 8px;
+}

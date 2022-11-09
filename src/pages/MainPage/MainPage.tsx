@@ -2,10 +2,7 @@ import { skipToken } from '@reduxjs/toolkit/dist/query';
 import React from 'react';
 import Button from '../../components/Button/Button';
 import NewsCard from '../../components/NewsCard/NewsCard';
-import Skeleton from '../../components/Skeleton/Skeleton';
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { useGetNewsByIdQuery, useGetNewsQuery } from '../../redux/news/newsApiSlice';
-import { getStory, getStoryIds } from '../../service/hacker-news';
+import { useGetNewsQuery } from '../../redux/news/newsApiSlice';
 import './mainpage.css';
 
 function MainPage() {

@@ -1,4 +1,3 @@
-import { skipToken } from '@reduxjs/toolkit/dist/query';
 import React from 'react';
 import Button from '../../components/Button/Button';
 import NewsCard from '../../components/NewsCard/NewsCard';
@@ -6,13 +5,8 @@ import { useGetNewsQuery } from '../../redux/news/newsApiSlice';
 import './mainpage.css';
 
 function MainPage() {
-
-    const { data: sotryIds = [], isFetching, refetch } = useGetNewsQuery();
-
-    // setInterval(() => {
-    //     refetch();
-    //     console.log('refetch');
-    // }, 60000);
+    // add poolInterval: 60000 to refetch every seconds
+    const { data: sotryIds = [], isFetching, refetch } = useGetNewsQuery(undefined, { pollingInterval: 60000 });
 
     function handleClick() {
         console.log('refetch button');
@@ -29,7 +23,7 @@ function MainPage() {
                 <Button name='Обновить' onClick={handleClick} />
             </header>
             <div className='flex-col-10'>
-                {sotryIds.slice(0, 100).map((id: number) => {
+                {isFetching ? <div>Загрузка</div> : sotryIds.slice(0, 100).map((id: number) => {
                     return <NewsCard key={id} id={id} />
                 })}
             </div>

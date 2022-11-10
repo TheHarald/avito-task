@@ -8,7 +8,7 @@ export const newsApiSlice = createApi({
         baseUrl: 'https://hacker-news.firebaseio.com/v0/'
     }),
     endpoints: (builder) => ({
-        getNews: builder.query<Array<number>, number | void>({
+        getNews: builder.query<Array<number>, void>({
             query: () => `newstories.json?print=pretty`
         }),
         getNewsById: builder.query<News, number>({

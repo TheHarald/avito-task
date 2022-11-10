@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useGetNewsByIdQuery } from '../../redux/news/newsApiSlice';
-import Skeleton from '../Skeleton/Skeleton';
+import NewsCardSceleton from '../Skeleton/NewsCardSkeleton';
 import './newscard.css';
 
 type NewsProps = {
@@ -14,7 +14,7 @@ function NewsCard(props: NewsProps) {
     const time = `${date.toLocaleTimeString()} ${date.toLocaleDateString()}`
     return (
         isFetching ?
-            <Skeleton />
+            <NewsCardSceleton />
             :
             <Link to={`/news/${props.id}`} className='news-card__container'>
                 <h2 className='news-card__title'>{data?.title}</h2>

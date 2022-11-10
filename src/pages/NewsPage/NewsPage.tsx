@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Comment from '../../components/Comment/Comment';
 import News from '../../components/News/News';
+import NewsSkeleton from '../../components/Skeleton/NewsSkeleton';
 import { useGetNewsByIdQuery } from '../../redux/news/newsApiSlice';
 import './newspage.css';
 
@@ -18,7 +19,7 @@ type NewsPageProps = {
 function NewsPage() {
 
     const { id } = useParams();
-    const { isFetching, data } = useGetNewsByIdQuery(Number(id));
+    const { isFetching, data, error } = useGetNewsByIdQuery(Number(id));
     const commentsCount = data?.kids?.length || 0;
 
     return (
@@ -27,6 +28,9 @@ function NewsPage() {
                 <Link className='button' to='/'>На главную</Link>
                 <button className='button'>Обновить комментарии</button>
             </header>
+
+            {isFetching && <NewsSkeleton />}
+            {error && <p>Ошибка загрузки</p>}
             {data && <News
                 title={data.title}
                 url={data.url}

@@ -3,6 +3,8 @@ import { getTime } from '../../Functions/supportingFunctions';
 import { useGetCommentByIdQuery, useGetNewsByIdQuery } from '../../redux/news/newsApiSlice';
 import IconButton from '../IconButton/IconButton';
 import { arrowDown } from '../Icons/icons';
+import CommentsSkeleton from '../Skeleton/CommentsSkeleton';
+import NewsSkeleton from '../Skeleton/NewsSkeleton';
 import './comment.css';
 
 type CommentProps = {
@@ -20,21 +22,27 @@ function Comment(props: CommentProps) {
         setIsShow(!isShow);
     }
 
+    let rawHTML = data?.text || '';
+
     return (
         <li className='comment__container'>
-            <div className='comment_root-container'>
+            {isFetching && <CommentsSkeleton />}
+            {data && <div className='comment_root-container'>
                 <div className='flex-col-10'>
-                    <p className='comment__author'>{data?.by}</p>
-                    <p className='comment__text'>{data?.text}</p>
+                    <div className='flex-row-10-down' >
+                        <p className='comment__author'>{data?.by}</p>
+                        <p className='comment__date'>{getTime(data && data.time)}</p>
+                    </div>
+                    <p className='comment__text' dangerouslySetInnerHTML={{ __html: rawHTML }}></p>
                 </div>
                 <div className='flex-row-10' >
-                    <p className='comment__date'>{getTime(data?.time)}</p>
                     {data?.kids && data?.kids?.length > 0 ? <IconButton icon={arrowDown} onClick={toggleComment} className={isShow ? 'up' : 'down'} /> : null}
                 </div>
-            </div>
+            </div>}
             {isShow ? <section className='comment__childs'>
+                {isFetching && <CommentsSkeleton />}
                 {
-                    data?.kids?.map((id: number) => {
+                    data && data.kids?.map((id: number) => {
                         return <Comment isChild={true} key={id} id={id} />
                     })
                 }

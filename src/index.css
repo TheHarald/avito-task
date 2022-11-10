@@ -14,11 +14,23 @@
 }
 
 
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
+
 
 .flex-row-10{
     display: flex;
     flex-direction: row;
     gap: 10px;
+}
+
+.flex-row-10-down{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: flex-end;
 }
 
 .flex-col-10{

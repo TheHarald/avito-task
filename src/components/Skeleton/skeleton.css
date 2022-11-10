@@ -1,5 +1,41 @@
-.skeleton__container{
+.news-card-skeleton{
     background-color: var(--light-gray-color);
     height: 80px;
     border-radius: 8px;
 }
+
+.news__skeleton{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.element__skeleton{
+    background-color: var(--light-gray-color);
+    border-radius: 8px;
+}
+
+.wide{
+    width: 100%;
+    height: 20px;
+}
+
+.big{
+    height: 40px;
+    width: 40%;
+}
+
+.small{
+    height: 20px;
+    width: 30%;
+}
+
+.comment__skeleton{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 80px;
+}
+
+
+

@@ -5,7 +5,7 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 function App() {
   return (
-    <div>
+    <div className="flex-center">
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/news/:id" element={<NewsPage />} />

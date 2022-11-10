@@ -1,10 +1,9 @@
 import React from 'react';
-import { getTime } from '../../Functions/supportingFunctions';
-import { useGetCommentByIdQuery, useGetNewsByIdQuery } from '../../redux/news/newsApiSlice';
+import { getTime } from '../../functions/supportingFunctions';
+import { useGetCommentByIdQuery } from '../../redux/news/newsApiSlice';
 import IconButton from '../IconButton/IconButton';
 import { arrowDown } from '../Icons/icons';
 import CommentsSkeleton from '../Skeleton/CommentsSkeleton';
-import NewsSkeleton from '../Skeleton/NewsSkeleton';
 import './comment.css';
 
 type CommentProps = {
@@ -15,7 +14,6 @@ type CommentProps = {
 function Comment(props: CommentProps) {
 
     const { isFetching, data } = useGetCommentByIdQuery(props.id);
-
     const [isShow, setIsShow] = React.useState(props.isChild);
 
     function toggleComment() {

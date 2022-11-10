@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import { getTime } from '../../Functions/supportingFunctions';
+import { getTime } from '../../functions/supportingFunctions';
 import { useGetNewsByIdQuery } from '../../redux/news/newsApiSlice';
 import './news.css';
 

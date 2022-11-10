@@ -41,7 +41,10 @@ function NewsPage() {
             <ul className='flex-col-10'>
                 {
                     data?.kids?.map((id: number) => {
-                        return <Comment isChild={false} key={id} id={id} />
+                        return <Comment
+                            isChild={false}
+                            key={id}
+                            id={id} />
                     })
                 }
             </ul>

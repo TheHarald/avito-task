@@ -1,11 +1,12 @@
 {
   "name": "avito-task",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "start": "vite --host",
     "build": "tsc && vite build",
+    "deploy": "yarn build && firebase deploy",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -15,7 +16,7 @@
     "react-query": "^3.39.2",
     "react-redux": "^8.0.5",
     "react-router": "^6.4.3",
-    "react-router-dom": "^6.4.3"
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.22",

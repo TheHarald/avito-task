@@ -22,7 +22,7 @@
 
 ```
 git clone https://github.com/TheHarald/avito-task
-cd /avito-task
+cd avito-task
 ```
 Если хотите запустить на своей локальной машине:
 ```

@@ -37,7 +37,7 @@ yarn start
 ```
 - В докер-контейнере:
 ```
-docker-compose-up
+docker-compose up
 ```
 
 Открыть http://localhost:3000/

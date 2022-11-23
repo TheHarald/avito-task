@@ -1,4 +1,5 @@
 # Тестовое задание Авито
+### [Ссылка на задание](https://github.com/avito-tech/internship_frontend_2022)
 
 ## Оглавление
 - [Технологии](#techs)
